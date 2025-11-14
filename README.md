@@ -1,65 +1,56 @@
-# Sistema Multi-Agentes para Qualificação e Conversão B2B
+# Sistema Multi-Agentes Saraiva Holding
 
-> Sistema completo de venda consultiva que identifica dores, gera desconforto, qualifica, nutre e converte leads B2B automaticamente.
+> Sistema completo de atendimento inteligente para as startups da Saraiva Holding: ligacao.ai e escreve.ai. Qualifica, nutre e converte leads B2B automaticamente.
 
 ## 🎯 O Que Este Sistema Faz
 
-Este sistema revoluciona vendas B2B automatizando o funil completo através de 4 agentes especializados que:
+Este sistema atende automaticamente leads interessados nas startups da Saraiva Holding através de agentes especializados que:
 
-✅ **Identificam dores reais** usando SPIN Selling (não vendem, descobrem)
-✅ **Geram desconforto** mostrando o custo de não agir (awareness)
-✅ **Qualificam com BANT** - Budget, Authority, Need, Timeline (fit real)
-✅ **Nutrem automaticamente** - Follow-ups inteligentes baseados em engajamento
-✅ **Convertem naturalmente** - Fechamento consultivo, não agressivo
-✅ **Funcionam 24/7** - Qualificação e conversão contínua, sem pausas
+✅ **Atendem 24/7** via WhatsApp com respostas instantâneas
+✅ **Qualificam leads** identificando interesse em ligacao.ai ou escreve.ai
+✅ **Respondem dúvidas** sobre funcionalidades, preços e casos de uso
+✅ **Agendam demonstrações** com especialistas no momento certo
+✅ **Nutrem leads** com follow-ups inteligentes e personalizados
+✅ **Convertem naturalmente** sem pressão ou abordagem agressiva
 
-**Resultado:** Taxa de conversão 3-5x maior + Leads chegam prontos para seu time fechar.
+**Resultado:** Atendimento consultivo 24/7 que qualifica e converte leads automaticamente.
 
 ## 🚀 O Diferencial
 
-A maioria dos chatbots apenas responde perguntas. Este sistema **vende consultivamente**:
+A maioria dos chatbots apenas responde perguntas. Este sistema **atende consultivamente**:
 
-- **Venda consultiva real**: Usa SPIN Selling, BANT, Gap Selling (não é chatbot genérico)
-- **Gera desconforto**: Faz cliente VER o custo de não agir (técnica comprovada)
-- **Score objetivo**: Classifica Hot/Warm/Cold baseado em 12 critérios BANT
-- **Follow-up inteligente**: Sequências automáticas baseadas em engajamento real
-- **Fechamento natural**: Converte quando lead está pronto, não quando você quer
-- **100% customizável**: Adapte para qualquer nicho B2B (SaaS, consultoria, agência, etc)
+- **Atendimento multi-produto**: Qualifica interesse em ligacao.ai ou escreve.ai
+- **Consultivo, não robótico**: Conversa natural que identifica necessidades reais
+- **Agentes especializados**: Cada startup tem seu agente com conhecimento específico
+- **Transições inteligentes**: Direciona para demonstração no momento certo
+- **Memória compartilhada**: Contexto preservado entre diferentes agentes
+- **100% adaptável**: Fácil adicionar novos produtos/startups ao sistema
 
-## 🏗️ Arquitetura - Funil Completo
+## 🏗️ Arquitetura - Sistema Multi-Agentes
 
 ```
-Lead entra (WhatsApp/Email/Chat)
+Lead entra via WhatsApp
     ↓
-┌─────────────────────┐
-│ Agente Supervisor  │ ← Analisa e roteia
-└─────────────────────┘
+┌─────────────────────────┐
+│  Agente Supervisor     │ ← Analisa e roteia
+└─────────────────────────┘
     ↓
-┌─────────────────────┐
-│ Agente Descoberta  │ ← SPIN Selling
-│ Identifica dores   │   (Gera desconforto!)
-│ Quantifica custos  │
-└─────────────────────┘
-    ↓
-┌─────────────────────┐
-│ Agente Qualificação│ ← BANT Scoring
-│ Budget, Authority  │   (Hot/Warm/Cold)
-│ Need, Timeline     │
-└─────────────────────┘
-    ↓
-┌────────┬────────┬────────┐
-│  HOT   │  WARM  │  COLD  │
-│ (9-12) │ (6-8)  │ (1-5)  │
-└────────┴────────┴────────┘
-    │       │        │
-    ↓       ↓        ↓
-FECHAMENTO FOLLOW-UP FOLLOW-UP
-(imediato)  (intenso) (leve)
-    │       │        │
-    ↓       ↓        ↓
-  GANHO  [Nutre]  [Nutre]
-         ↓ aqueceu
-    REQUALIFICA → FECHA
+    ├─→ Nova conversa → Agente Geral
+    │                    ├─→ Apresenta Saraiva Holding
+    │                    └─→ Identifica interesse
+    │
+    ├─→ Interesse ligacao.ai → Agente ligacao.ai
+    │                           ├─→ Responde dúvidas
+    │                           ├─→ Demonstra funcionalidades
+    │                           └─→ Agenda demonstração
+    │
+    └─→ Interesse escreve.ai → Agente escreve.ai
+                                ├─→ Responde dúvidas
+                                ├─→ Mostra exemplos
+                                └─→ Agenda demonstração
+
+Memória PostgreSQL compartilhada
+Contexto preservado entre agentes
 ```
 
 ## 🚀 Quick Start
@@ -83,71 +74,71 @@ docker run -it --rm -p 5678:5678 -v ~/.n8n:/home/node/.n8n n8nio/n8n
 
 **Ver guia completo:** [Guia de Implementação B2B](docs/guia-implementacao-b2b.md)
 
-## 🤖 Os 4 Agentes Especializados
+## 🤖 Os Agentes Especializados
 
-### 1. Agente Descoberta
-- **Função**: Identificar dores usando SPIN Selling
-- **Técnica**: Situation → Problem → Implication → Need-Payoff
-- **Output**: 2+ dores identificadas + custo quantificado
-- **Prompt**: [`prompts/system-messages/agente-descoberta.md`](prompts/system-messages/agente-descoberta.md)
+### 1. Agente Supervisor
+- **Função**: Rotear mensagens para o agente correto
+- **Técnica**: Análise de contexto e intent detection
+- **Output**: Direcionamento inteligente
+- **Prompt**: [`prompts/system-messages/agente-supervisor.md`](prompts/system-messages/agente-supervisor.md)
 
-### 2. Agente Qualificação
-- **Função**: Validar fit comercial com BANT
-- **Framework**: Budget + Authority + Need + Timeline (0-12 pontos)
-- **Output**: Score e classificação (Hot/Warm/Cold)
-- **Prompt**: [`prompts/system-messages/agente-qualificacao.md`](prompts/system-messages/agente-qualificacao.md)
+### 2. Agente Geral
+- **Função**: Atendimento inicial e apresentação da Saraiva Holding
+- **Técnica**: Coleta de informações e identificação de interesse
+- **Output**: Lead qualificado para ligacao.ai ou escreve.ai
+- **Prompt**: [`prompts/system-messages/agente-geral.md`](prompts/system-messages/agente-geral.md)
 
-### 3. Agente Follow-up
-- **Função**: Nutrir leads com conteúdo relevante
-- **Estratégia**: Sequências diferentes para Hot/Warm/Cold
-- **Output**: Lead reaquecido ou breakup gentil
-- **Prompt**: [`prompts/system-messages/agente-followup.md`](prompts/system-messages/agente-followup.md)
+### 3. Agente ligacao.ai
+- **Função**: Especialista em automação de vendas e discador
+- **Técnica**: Atendimento consultivo sobre ligacao.ai
+- **Output**: Lead educado e pronto para demonstração
+- **Prompt**: [`prompts/system-messages/agente-ligacao.md`](prompts/system-messages/agente-ligacao.md)
 
-### 4. Agente Fechamento
-- **Função**: Converter leads quentes
-- **Técnicas**: Assumptive, Alternative, Urgency closes
-- **Output**: Call agendada, proposta enviada, deal fechado
-- **Prompt**: [`prompts/system-messages/agente-fechamento.md`](prompts/system-messages/agente-fechamento.md)
+### 4. Agente escreve.ai
+- **Função**: Especialista em geração de conteúdo com IA
+- **Técnica**: Atendimento consultivo sobre escreve.ai
+- **Output**: Lead educado e pronto para demonstração
+- **Prompt**: [`prompts/system-messages/agente-escreve.md`](prompts/system-messages/agente-escreve.md)
 
 ## 📚 Documentação Completa
 
-### Guias de Implementação
-- 📖 [**Guia de Implementação B2B**](docs/guia-implementacao-b2b.md) - **COMECE AQUI!**
-- 🏗️ [Arquitetura B2B Consultiva](docs/arquitetura-b2b-consultivo.md)
-- 🔧 [Tools e Integrações](prompts/tools/b2b-tools.md)
-
 ### Prompts dos Agentes
-- 🎯 [Agente Supervisor B2B](prompts/system-messages/agente-supervisor-b2b.md)
-- 🔍 [Agente Descoberta](prompts/system-messages/agente-descoberta.md)
-- ✅ [Agente Qualificação](prompts/system-messages/agente-qualificacao.md)
-- 📧 [Agente Follow-up](prompts/system-messages/agente-followup.md)
-- 🤝 [Agente Fechamento](prompts/system-messages/agente-fechamento.md)
+- 🎯 [Agente Supervisor](prompts/system-messages/agente-supervisor.md)
+- 👋 [Agente Geral](prompts/system-messages/agente-geral.md)
+- 📞 [Agente ligacao.ai](prompts/system-messages/agente-ligacao.md)
+- ✍️ [Agente escreve.ai](prompts/system-messages/agente-escreve.md)
 
-### Arquitetura Original (Outro caso de uso)
-- [Arquitetura do Sistema](docs/arquitetura-sistema.md)
-- [Fluxo de Atendimento](docs/fluxo-atendimento.md)
+### Arquitetura e Configuração
+- [Workflows n8n](workflows/)
+- [Tools e Integrações](prompts/tools/)
 
-## 🎨 Casos de Uso
+## 🎨 Produtos Atendidos
 
-### SaaS B2B
-Qualifique prospects, identifique dores de processos manuais, converta em demos.
+### ligacao.ai
+Startup de automação de vendas com:
+- Discador automático inteligente
+- CRM integrado
+- Gestão de campanhas de vendas
+- Relatórios e analytics
 
-### Consultoria/Agência
-Descubra gaps em estratégia, quantifique ROI perdido, feche contratos de consultoria.
+### escreve.ai
+Startup de geração de conteúdo com IA:
+- Copywriting para redes sociais
+- Blog posts e artigos
+- E-mails marketing
+- Landing pages e anúncios
 
-### Automação de Marketing
-Identifique gargalos de vendas, mostre oportunidades perdidas, venda automação.
+### Fácil Expansão
+Sistema preparado para adicionar novos produtos da holding facilmente.
 
-### Qualquer B2B!
-Sistema 100% customizável. Adapte os prompts para seu nicho específico.
+## 📊 Benefícios
 
-## 📊 Resultados Esperados
-
-Com base em implementações similares:
-- **+40-60%** taxa de resposta (vs cold outreach)
-- **3-5x** conversão (vs qualificação manual)
-- **-70%** custos com SDRs
-- **24/7** operação (vs 8h/dia)
+Sistema de atendimento inteligente que oferece:
+- **24/7** disponibilidade sem custo adicional
+- **Respostas instantâneas** para todos os leads
+- **Qualificação automática** antes do contato humano
+- **Contexto preservado** entre diferentes agentes
+- **Escalável** para múltiplos produtos/startups
 
 ## 🛠️ Stack Tecnológico
 
@@ -167,19 +158,19 @@ Pull requests são bem-vindos! Para mudanças grandes, abra uma issue primeiro.
 
 ---
 
-**Desenvolvido por**: Fellipe Saraiva
-**Versão**: 2.0.0 (B2B Consultivo)
-**Última atualização**: Novembro 2025
-**Status**: 🚀 Pronto para Produção
+**Desenvolvido para**: Saraiva Holding
+**Versão**: 3.0.0 (Multi-Startups)
+**Última atualização**: Janeiro 2025
+**Status**: 🚀 Em Produção
 
 ---
 
 ## 🎯 Próximos Passos
 
-1. **Leia o guia**: [Guia de Implementação B2B](docs/guia-implementacao-b2b.md)
-2. **Setup ambiente**: PostgreSQL + n8n
-3. **Customize prompts**: Adapte para seu nicho
-4. **Teste com 10 leads**: Valide antes de escalar
-5. **Deploy e escale**: Comece a converter!
+1. **Configure os agentes**: Revise os prompts em `/prompts/system-messages/`
+2. **Setup workflows**: Importe os workflows do n8n
+3. **Configure RAG**: Adicione conteúdo sobre ligacao.ai e escreve.ai
+4. **Teste**: Valide o fluxo completo antes de lançar
+5. **Deploy**: Conecte ao WhatsApp e comece a atender!
 
-**Dúvidas?** Abra uma issue ou veja a documentação completa nos links acima.
+**Dúvidas?** Entre em contato com a equipe Saraiva Holding.

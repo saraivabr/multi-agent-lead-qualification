@@ -1,5 +1,5 @@
 {
-  "name": "[Le Mans] Multi-agentes de atendimento | Agente Supervisor",
+  "name": "[Saraiva Holding] Multi-agentes de atendimento | Agente Supervisor",
   "nodes": [
     {
       "parameters": {},
@@ -245,7 +245,7 @@
     },
     {
       "parameters": {
-        "description": "## 2. Agente de Loteamentos (`agente_loteamentos`)\n### Função:\nEste agente é responsável por seguir o atendimento e qualificação caso o usuário tenha interesse em loteamentos da Le Mans.\n\n### Quando usar:\n- Quando ficou clara o interesse dele em saber mais sobre loteamentos.\n- Quando o usuário quiser perguntar ou tirar alguma dúvida sobre loteamentos.\n\n### Quando não usar:\n- Quando o usuário já foi pré-atendido.\n- Quando ele tiver interesse em outras áreas da Le Mans, como imóveis ou então construção, mas não demonstrar nenhum interesse em loteamentos.\n- Ele não faz atendimento e qualificação de outros assuntos que não seja sobre loteamentos.",
+        "description": "## 2. Agente ligacao.ai (`agente_ligacao`)\n### Função:\nEste agente é responsável por seguir o atendimento e qualificação caso o usuário tenha interesse no ligacao.ai.\n\n### Quando usar:\n- Quando ficou claro o interesse em automação de vendas e discador automático.\n- Quando o usuário quiser perguntar ou tirar alguma dúvida sobre ligacao.ai.\n\n### Quando não usar:\n- Quando o usuário já foi pré-atendido.\n- Quando ele tiver interesse em escreve.ai ou outros produtos.\n- Ele não faz atendimento de outros produtos que não seja ligacao.ai.",
         "workflowId": {
           "__rl": true,
           "value": "isj3gPoBRwDxr7Z4",
@@ -300,11 +300,11 @@
         400
       ],
       "id": "4ffba27f-7c15-4c53-b47e-1e5f79c62d45",
-      "name": "agente_loteamentos"
+      "name": "agente_ligacao"
     },
     {
       "parameters": {
-        "description": "## 3. Agente de Construção (`agente_construtora`)\n### Função:\nEste agente é responsáel por seguir o atendimento e qualificação caso o usuário tenha interesse em construções da Le Mans.\n\n### Quando usar:\n- Quando ficou clara o interesse dele em saber mais sobre a Le Mans Construtora.\n- Quando o usuário quiser perguntar ou tirar alguma dúvida sobre construções.\n- Quando o usuário demonstrar interesse em querer fazer algum projeto personalizado de construção.\n\n\n### Quando não usar:\n- Quando o usuário já foi pré-atendido.\n- Quando ele tiver interesse em outras áreas da Le Mans, como imóveis ou então loteamentos, mas não demonstrar nenhum interesse em desenvolver projetos de construção.\n- Ele não faz atendimento e qualificação de outros assuntos que não seja sobre construções.",
+        "description": "## 3. Agente escreve.ai (`agente_escreve`)\n### Função:\nEste agente é responsável por seguir o atendimento e qualificação caso o usuário tenha interesse no escreve.ai.\n\n### Quando usar:\n- Quando ficou claro o interesse em geração de conteúdo com IA.\n- Quando o usuário quiser perguntar ou tirar alguma dúvida sobre escreve.ai.\n- Quando o usuário demonstrar interesse em copywriting ou criação de conteúdo.\n\n### Quando não usar:\n- Quando o usuário já foi pré-atendido.\n- Quando ele tiver interesse em ligacao.ai ou outros produtos.\n- Ele não faz atendimento de outros produtos que não seja escreve.ai.",
         "workflowId": {
           "__rl": true,
           "value": "0bNiByrrQMEcRvm4",
@@ -359,7 +359,7 @@
         400
       ],
       "id": "dccdeb4a-4dd6-48f5-85cf-4381bc203c72",
-      "name": "agente_construtora"
+      "name": "agente_escreve"
     },
     {
       "parameters": {
@@ -659,7 +659,7 @@
         ]
       ]
     },
-    "agente_loteamentos": {
+    "agente_ligacao": {
       "ai_tool": [
         [
           {
@@ -670,7 +670,7 @@
         ]
       ]
     },
-    "agente_construtora": {
+    "agente_escreve": {
       "ai_tool": [
         [
           {
